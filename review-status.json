@@ -29,10 +29,10 @@
     "title": "ATR و اندازه‌گیری نوسان",
     "research_state": "review_packet_ready",
     "packet": "E12.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "73e45dd71b88835f2fa3fedcee57b709215958502a88a950ddb81b79a26774d2",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "ترکیب شش iATR ورودی و مسیر ماهانه پیاده شده است؛ تولید iATR از OHLC و گردکردن MT4 هنوز تطبیق نشده‌اند."
+    "packet_revision": "review-v3",
+    "packet_sha256": "b1ab984e91cbab5eb2b4f92503d7937f6851e343cf2a6121cd97623885f36849",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "TR و ATR از OHLC، SMA/Wilder، warm-up صریح، ترکیب شش دوره و مسیر ماهانه در Python اجرا می‌شوند؛ MT4 وابستگی اجرا نیست و ادعای برابری دقیق نداریم."
   },
   {
     "epic_id": "E13",
@@ -42,10 +42,10 @@
     "title": "شناخت لگ",
     "research_state": "review_packet_ready",
     "packet": "E13.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "5a5548084fb8f14128e658fe5b94a47c064c8463eea7fb8a9b8f181eacb8b612",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "اندازه‌گیری لگ، طول صفر، جهت اولیه، شکست سخت ابتدا و انتخاب اولین extreme واجد شرط پیاده شده‌اند؛ چرخه زنده intrabar و side effectهای MT4 هنوز تطبیق نشده‌اند."
+    "packet_revision": "review-v3",
+    "packet_sha256": "2d0bb0bc3fad0db94d9fe41a184d1bd7680f179e6de09c72be1293fa369d23fd",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "لگ خودکار روی کندل بسته، پنجره شروع ۱۵ کندلی، بررسی تغییر، شکست ابتدا، اسکن مجدد و نسخه‌های تغییر endpoint پیاده‌اند؛ ترتیب تیک داخل کندل معلوم نیست و لگ تأیید معاملاتی ندارد."
   },
   {
     "epic_id": "E14",
@@ -55,10 +55,10 @@
     "title": "شناخت پیوت",
     "research_state": "review_packet_ready",
     "packet": "E14.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "fa2d0dc9316bbb4cab41d15a5e7cf34db5a338054d26fc74c5d8fd6816ea2311",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "پنج شاخه فاصله، اصلاح/تبصره و انتقال پرچم‌های حالت پیاده شده‌اند؛ خروجی رویداد فقط reference candidate است. resolver پنجره‌های تاریخی و تطابق MT4 هنوز کامل نیست و تأیید معاملاتی صادر نمی‌شود."
+    "packet_revision": "review-v3",
+    "packet_sha256": "ba023bd10dbd6a6553f3933b87a4fba1de80db7ed7a1ee9bbb1609db1fb11f56",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "detector کامل پیوتِ قاعده مرجع شامل resolver تاریخی، پنج شاخه، پرچم‌ها و زمان تأیید در Python اجرا می‌شود؛ خروجی warm-up موقت است. تأیید الگوریتم با تأیید وحید/سودآوری فرق دارد."
   },
   {
     "epic_id": "E15",
@@ -90,10 +90,10 @@
     "title": "کندل‌شناسی",
     "research_state": "review_packet_ready",
     "packet": "E17.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "c2221698bdd1631b59274970d24126b720850e49d72a45de6772b16455ffc654",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "هندسه بدنه و هر دو سایه، تقدم LSH، دوجی و مرزهای ۸۰/۱۲۰/۲۴۰ با ATR ورودی پیاده شده‌اند؛ مستر و کندل ترکیبی هنوز تعریف اجرایی ندارند."
+    "packet_revision": "review-v3",
+    "packet_sha256": "bb8606266276f616bf3103973a81ec48a274ed65c75464c8febb6cad5bafa463",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "طبقه‌بندی کندل مستقیماً به ATR محاسبه‌شده از OHLC وصل است؛ هر دو سایه، LSH و مرزهای مرجع رعایت می‌شوند. مستر و کندل ترکیبی هنوز تعریف اجرایی ندارند."
   },
   {
     "epic_id": "E18",
@@ -224,10 +224,10 @@
     "title": "تحلیل چندتایم‌فریمی",
     "research_state": "review_packet_ready",
     "packet": "E30.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "89e39147b37678aa386e0a7b004b75bfbde7049f0acb4e6eed8e996f3ecfded5",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "نگاشت دقیق تریگر/ساختار و حذف اطلاعات هنوز در دسترس‌نبوده پیاده شده‌اند؛ توافق تایم‌ها و انتخاب anchor استراتژی تعیین نشده است."
+    "packet_revision": "review-v3",
+    "packet_sha256": "1149060c7a85f8af708900b58ce0f7c2795573435466437ebe68823bbfe3b42b",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "نگاشت تریگر/ساختار و ساخت والدهای کامل M5 تا ماهانه از M1 با تقویم مشخص پیاده‌اند؛ گپ/والد ناقص حذف می‌شود. تصمیم معاملاتی در تعارض تایم‌ها هنوز تعریف نشده است."
   },
   {
     "epic_id": "E31",
@@ -534,9 +534,9 @@
     "title": "شناخت بیس",
     "research_state": "review_packet_ready",
     "packet": "E59.html",
-    "packet_revision": "review-v2",
-    "packet_sha256": "da603216b0e5694fe68f479dde32c59798fe241da01023184bff19f1303bb62c",
-    "implementation_state": "partial_kernel_tested",
-    "implementation_scope": "بازه انتخابی فقط با تعداد، حدود بدنه/سایه و هم‌پوشانی اندازه‌گیری می‌شود؛ هیچ شرطی برای اعلام بیس اختراع نشده است."
+    "packet_revision": "review-v3",
+    "packet_sha256": "9449b5480e96ae48844a032ac51f63397496dbc42b9d8449268bfe99ba1d1798",
+    "implementation_state": "python_replay_implemented_scope_limited",
+    "implementation_scope": "بازه‌های کاندیدای ۳/۴/۵ کندلی به‌صورت زمانی تولید و اندازه‌گیری می‌شوند؛ اندازه پنجره فقط تنظیم مرور است و حکم بیس صادر نمی‌شود."
   }
 ]
