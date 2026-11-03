@@ -42,10 +42,10 @@
     "title": "شناخت لگ",
     "research_state": "review_packet_ready",
     "packet": "E13.html",
-    "packet_revision": "review-v5-manual",
-    "packet_sha256": "61829d626e0e82033bf211327b35c030686e98a47784ff088b6e8077666027c4",
+    "packet_revision": "review-v7",
+    "packet_sha256": "b3c25c4caadef15434c75ed3d04ad42e4204b45dd1163ca8594cae3a33c67337",
     "implementation_state": "python_replay_implemented_scope_limited",
-    "implementation_scope": "لگ خودکار و تغییر دستی آن با مرتب‌سازی زمان‌ها، اسکن مجدد انتها و ادامه ماشین حالت روی کندل بسته پیاده‌اند؛ snap در حال تشکیل و ترتیب تیک داخل کندل هنوز پیاده نیست و لگ تأیید معاملاتی ندارد."
+    "implementation_scope": "لگ خودکار و تغییر دستی آن با مرتب‌سازی زمان‌ها، اسکن مجدد انتها و ادامه ماشین حالت روی کندل بسته پیاده‌اند؛ snap با والد در حال تشکیل از پیشوند کندل‌های بسته بازسازی و پیاده شده است؛ ترتیب تیک داخل کندل بازسازی نمی‌شود و لگ تأیید معاملاتی ندارد."
   },
   {
     "epic_id": "E14",
@@ -55,8 +55,8 @@
     "title": "شناخت پیوت",
     "research_state": "review_packet_ready",
     "packet": "E14.html",
-    "packet_revision": "review-v3",
-    "packet_sha256": "ba023bd10dbd6a6553f3933b87a4fba1de80db7ed7a1ee9bbb1609db1fb11f56",
+    "packet_revision": "review-v7",
+    "packet_sha256": "7b294454557485206fe68953edcaf4ce7a7fc6b948689aa5f17b2eef8ea82161",
     "implementation_state": "python_replay_implemented_scope_limited",
     "implementation_scope": "detector کامل پیوتِ قاعده مرجع شامل resolver تاریخی، پنج شاخه، پرچم‌ها و زمان تأیید در Python اجرا می‌شود؛ خروجی warm-up موقت است. تأیید الگوریتم با تأیید وحید/سودآوری فرق دارد."
   },
@@ -534,9 +534,9 @@
     "title": "شناخت بیس",
     "research_state": "review_packet_ready",
     "packet": "E59.html",
-    "packet_revision": "review-v3",
-    "packet_sha256": "9449b5480e96ae48844a032ac51f63397496dbc42b9d8449268bfe99ba1d1798",
+    "packet_revision": "review-v7",
+    "packet_sha256": "8db9c95a74209966e3e87dadf6a557d9c18f8d87a8044c4e39238a66e0c817b6",
     "implementation_state": "python_replay_implemented_scope_limited",
-    "implementation_scope": "بازه‌های کاندیدای ۳/۴/۵ کندلی به‌صورت زمانی تولید و اندازه‌گیری می‌شوند؛ اندازه پنجره فقط تنظیم مرور است و حکم بیس صادر نمی‌شود."
+    "implementation_scope": "اندازه‌گیری کاندیدا حفظ شده؛ تشخیص بیس در پروفایل آموزشی با حداقل ۳/۴ بر اساس مبنای فراکتال و دو دامنه مقایسه کلوز، به replay وصل شده است. تفسیر all_prior حکم جهانی بیس نیست و هیچ ورود معاملاتی تولید نمی‌شود."
   }
 ]
