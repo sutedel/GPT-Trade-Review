@@ -1,0 +1,610 @@
+[
+  {
+    "strategy_id": "S01",
+    "title": "بازگشت FTC1 طبق کد وحید",
+    "direct_concepts": [
+      "E13",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26",
+      "E27",
+      "E43",
+      "E44",
+      "E42",
+      "E49",
+      "E50",
+      "E52"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E17",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26",
+      "E27",
+      "E42",
+      "E43",
+      "E44",
+      "E49",
+      "E50",
+      "E52"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E17"
+    ],
+    "packets_missing": [
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E26",
+      "E27",
+      "E42",
+      "E43",
+      "E44",
+      "E49",
+      "E50",
+      "E52"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S02",
+    "title": "تسویه سطح H1 با تریگر M5 کارگاه",
+    "direct_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E30",
+      "E31",
+      "E37",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E17",
+      "E23",
+      "E30",
+      "E31",
+      "E37",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E15",
+      "E23",
+      "E31",
+      "E37",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S03",
+    "title": "ادامه AB=CD و تأیید SeqCandleLines",
+    "direct_concepts": [
+      "E12",
+      "E13",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E17",
+      "E23",
+      "E30",
+      "E37",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E23",
+      "E37",
+      "E38",
+      "E39",
+      "E40",
+      "E43",
+      "E44",
+      "E49"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S04",
+    "title": "ورود پس از تشکیل پیوت و RTP",
+    "direct_concepts": [
+      "E14",
+      "E25",
+      "E34",
+      "E43",
+      "E44",
+      "E46"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E17",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E27",
+      "E30",
+      "E34",
+      "E43",
+      "E44",
+      "E46",
+      "E52"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E15",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E27",
+      "E34",
+      "E43",
+      "E44",
+      "E46",
+      "E52"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S05",
+    "title": "شکست تأییدشده و بازگشت به ABO",
+    "direct_concepts": [
+      "E15",
+      "E16",
+      "E18",
+      "E34",
+      "E35",
+      "E43",
+      "E44"
+    ],
+    "all_required_concepts": [
+      "E03",
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E16",
+      "E17",
+      "E18",
+      "E30",
+      "E34",
+      "E35",
+      "E43",
+      "E44"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E03",
+      "E15",
+      "E16",
+      "E18",
+      "E34",
+      "E35",
+      "E43",
+      "E44"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S06",
+    "title": "برگشت با ماهیت سطح و تریگرلاین",
+    "direct_concepts": [
+      "E15",
+      "E18",
+      "E30",
+      "E43",
+      "E44"
+    ],
+    "all_required_concepts": [
+      "E03",
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E17",
+      "E18",
+      "E30",
+      "E43",
+      "E44"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E03",
+      "E15",
+      "E18",
+      "E43",
+      "E44"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S07",
+    "title": "بازگشت روی سطح SO4",
+    "direct_concepts": [
+      "E15",
+      "E16",
+      "E31",
+      "E36",
+      "E47",
+      "E43",
+      "E44"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E16",
+      "E17",
+      "E30",
+      "E31",
+      "E36",
+      "E43",
+      "E44",
+      "E47"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E15",
+      "E16",
+      "E31",
+      "E36",
+      "E43",
+      "E44",
+      "E47"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S08",
+    "title": "ورود QM با زمینه عرضه و تقاضا",
+    "direct_concepts": [
+      "E19",
+      "E32",
+      "E34",
+      "E43",
+      "E44",
+      "E47",
+      "E53"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E16",
+      "E17",
+      "E19",
+      "E30",
+      "E32",
+      "E34",
+      "E36",
+      "E43",
+      "E44",
+      "E47",
+      "E48",
+      "E53",
+      "E59"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30",
+      "E59"
+    ],
+    "packets_missing": [
+      "E15",
+      "E16",
+      "E19",
+      "E32",
+      "E34",
+      "E36",
+      "E43",
+      "E44",
+      "E47",
+      "E48",
+      "E53"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S09",
+    "title": "بازگشت به هیدن‌گپ",
+    "direct_concepts": [
+      "E17",
+      "E20",
+      "E32",
+      "E34",
+      "E43",
+      "E44"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E17",
+      "E20",
+      "E30",
+      "E32",
+      "E34",
+      "E43",
+      "E44"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E15",
+      "E20",
+      "E32",
+      "E34",
+      "E43",
+      "E44"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S10",
+    "title": "شکست بیس پیوت",
+    "direct_concepts": [
+      "E13",
+      "E17",
+      "E48",
+      "E43",
+      "E44"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E17",
+      "E43",
+      "E44",
+      "E48",
+      "E59"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E17",
+      "E59"
+    ],
+    "packets_missing": [
+      "E43",
+      "E44",
+      "E48"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S11",
+    "title": "برگشت سه درایو پس از شکست تریگرلاین",
+    "direct_concepts": [
+      "E13",
+      "E18",
+      "E43",
+      "E44",
+      "E57"
+    ],
+    "all_required_concepts": [
+      "E03",
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E18",
+      "E30",
+      "E33",
+      "E43",
+      "E44",
+      "E57"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E03",
+      "E18",
+      "E33",
+      "E43",
+      "E44",
+      "E57"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  },
+  {
+    "strategy_id": "S12",
+    "title": "گره‌های لگ و سناریوهای ادامه/ریورس جلسات تاریخ‌دار",
+    "direct_concepts": [
+      "E13",
+      "E24",
+      "E25",
+      "E29",
+      "E31",
+      "E36",
+      "E43",
+      "E44",
+      "E46"
+    ],
+    "all_required_concepts": [
+      "E12",
+      "E13",
+      "E14",
+      "E15",
+      "E17",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E27",
+      "E29",
+      "E30",
+      "E31",
+      "E36",
+      "E43",
+      "E44",
+      "E46",
+      "E52"
+    ],
+    "packets_available": [
+      "E12",
+      "E13",
+      "E14",
+      "E17",
+      "E30"
+    ],
+    "packets_missing": [
+      "E15",
+      "E22",
+      "E23",
+      "E24",
+      "E25",
+      "E27",
+      "E29",
+      "E31",
+      "E36",
+      "E43",
+      "E44",
+      "E46",
+      "E52"
+    ],
+    "concept_approval_gate": "pending",
+    "strategy_spec_approval": "not_recorded",
+    "runtime_parity": "not_run",
+    "performance_validation": "not_run",
+    "ready_for_final_strategy_approval": false
+  }
+]
