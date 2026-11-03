@@ -42,10 +42,10 @@
     "title": "شناخت لگ",
     "research_state": "review_packet_ready",
     "packet": "E13.html",
-    "packet_revision": "review-v3",
-    "packet_sha256": "2d0bb0bc3fad0db94d9fe41a184d1bd7680f179e6de09c72be1293fa369d23fd",
+    "packet_revision": "review-v5-manual",
+    "packet_sha256": "61829d626e0e82033bf211327b35c030686e98a47784ff088b6e8077666027c4",
     "implementation_state": "python_replay_implemented_scope_limited",
-    "implementation_scope": "لگ خودکار روی کندل بسته، پنجره شروع ۱۵ کندلی، بررسی تغییر، شکست ابتدا، اسکن مجدد و نسخه‌های تغییر endpoint پیاده‌اند؛ ترتیب تیک داخل کندل معلوم نیست و لگ تأیید معاملاتی ندارد."
+    "implementation_scope": "لگ خودکار و تغییر دستی آن با مرتب‌سازی زمان‌ها، اسکن مجدد انتها و ادامه ماشین حالت روی کندل بسته پیاده‌اند؛ snap در حال تشکیل و ترتیب تیک داخل کندل هنوز پیاده نیست و لگ تأیید معاملاتی ندارد."
   },
   {
     "epic_id": "E14",
