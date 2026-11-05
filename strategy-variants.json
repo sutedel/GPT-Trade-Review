@@ -1,0 +1,90 @@
+{
+  "config": {
+    "version": "breakout-variants-v1",
+    "author": "assistant_proposals_not_vahid_strategy_approval",
+    "source": "P01_frozen_proposal_lab_v1",
+    "wait_bars": 32,
+    "impulse_close_atr": 0.5,
+    "touch_zone_atr": 0.1,
+    "confirmation_close_atr": 0.25,
+    "cancel_close_atr": -0.5,
+    "failed_break_close_atr": -0.25,
+    "leg_lookback": 15,
+    "leg_tie": "recent",
+    "leg_minimum_atr": 2.4,
+    "execution": "same_v1_simulator_costs_next_contiguous_open_target_2R_stop_1.5_frozen_breakout_ATR_timeout_48_bars",
+    "sampling": "P04_P05_P07_first_P01_pending_setup_ignore_new_breakouts_until_resolution_or_32_bar_expiry; P06_all_P01_signals_reversed",
+    "holdout": "legacy_2026_not_used; 2024_exploration_and_2025_temporal_comparison_already_seen_in_prior_research",
+    "strategies": [
+      {
+        "id": "P04",
+        "name_fa": "برگشت به خط و تأیید ادامه",
+        "stop_atr": 1.5,
+        "entry_fa": "شکست P01؛ ابتدا کلوز حداقل ۰٫۵ ATR دور از خط. در ۳۲ کندل بعد، لمس ناحیهٔ ±۰٫۱ ATR و سپس کندل هم‌جهت با کلوز حداقل ۰٫۲۵ ATR بیرون خط؛ ورود کندل بعد. کلوز −۰٫۵ ATR یا گپ داده، انتظار را لغو می‌کند.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR ثابتِ لحظهٔ شکست از ورود؛ هدف ۲R و خروج زمانی پس از ۴۸ کندل."
+      },
+      {
+        "id": "P05",
+        "name_fa": "برگشت و تأیید با فیلتر لگ",
+        "stop_atr": 1.5,
+        "entry_fa": "دقیقاً شرط P04؛ علاوه بر آن، لگ زندهٔ موتور موجود در زمان تأیید باید هم‌جهت ورود و طول آن حداقل ۲٫۴ ATR ثابتِ شکست باشد. وضعیت لگ در همان لحظه ذخیره می‌شود.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR ثابتِ لحظهٔ شکست از ورود؛ هدف ۲R و خروج زمانی پس از ۴۸ کندل."
+      },
+      {
+        "id": "P06",
+        "name_fa": "معکوس مستقیم شکست · کنترل",
+        "stop_atr": 1.5,
+        "entry_fa": "همان سیگنال‌های P01، اما جهت ورود برعکس است. منتظر برگشت نمی‌ماند؛ ورود کندل بعد. این آزمون جهت معکوس با نسبت هدف به ریسک ۲ است، نه منفیِ حسابی سود معاملات قبلی.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR ثابتِ لحظهٔ شکست از ورود در جهت مخالف؛ هدف ۲R و خروج زمانی ۴۸ کندل."
+      },
+      {
+        "id": "P07",
+        "name_fa": "معکوس پس از شکست ناموفق",
+        "stop_atr": 1.5,
+        "entry_fa": "پس از شکست P01، حداکثر ۳۲ کندل منتظر کلوز حداقل ۰٫۲۵ ATR در سمت مخالف خط می‌ماند. سپس در کندل بعد خلاف جهت شکست وارد می‌شود. گپ، انتظار را لغو می‌کند.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR ثابتِ لحظهٔ شکست از ورود؛ هدف ۲R و خروج زمانی پس از ۴۸ کندل."
+      }
+    ]
+  },
+  "config_sha256": "ca75a0b995fa2133e064c59233d1851e46dd5fd23454326d3eb136bb09c271d9",
+  "code_sha256": {
+    "src/forex_research/strategies/variants.py": "4a144f651833baa5ea28603055d6abd51f3d4bd4319e3ef24329c7c6d239d5f4",
+    "src/forex_research/strategies/lab.py": "f06f0adf43de7b3b7e3c1b89f8a6083ecc0d146be352eee4ffda9c17e6e561ec",
+    "src/forex_research/detectors.py": "0071e149f56fd7fec57daf459efa17a51a8596a03e459bf9411c92fb0e5b7f28",
+    "src/forex_research/concepts/leg.py": "504a9f3719cbd749f1c97da8ea209a35ccd32a5a673302b3e1c8af74ce2b01ad",
+    "src/forex_research/concepts/leg_atr.py": "5375fed9166d3211095b503abb4396692682225d123d4bc3a337a4d5d2a88a3b"
+  },
+  "source_registry_sha256": "710165d5b2893669b605dfcd064af0cea50390b3479a229ef89377165ec22e1c",
+  "datasets": [
+    {
+      "symbol": "EUR_USD",
+      "file": "strategy-variants-EUR_USD.json",
+      "sha256": "bbaca8cad98cf0f286df9c3fe0883a5245b187a148b3ea5fe3a3f527509e2ce7",
+      "source_file_sha256": "e87913c1902c649e2629dbbafebfe344d64dde255e4845421b5946062d91b10d"
+    },
+    {
+      "symbol": "GBP_USD",
+      "file": "strategy-variants-GBP_USD.json",
+      "sha256": "0a0f966ad62d1957eecaf9335ed1d124d3b8f2795e3be0e11027c5a765f3fe75",
+      "source_file_sha256": "44f4b4656db42e6880e3cd73b8b653487cfdc692671ff40a873e292add538b88"
+    },
+    {
+      "symbol": "AUD_USD",
+      "file": "strategy-variants-AUD_USD.json",
+      "sha256": "8b3cd1065f4291f2b1f2588649278e12136ceb8c7d72caeaf31ae2c6e783bbc6",
+      "source_file_sha256": "644623db3209f3c0e693de34fc0771f1ed7f9318303469b9fb4a657333678caf"
+    },
+    {
+      "symbol": "USD_JPY",
+      "file": "strategy-variants-USD_JPY.json",
+      "sha256": "c04e72166b4616cf93c8971ff442ca58b2d143e0da1873fbfd24752d4193eb7e",
+      "source_file_sha256": "20245a2cb767bf5532a6e1cbb559d62bf735cfb202671bb4f50a48e926b68675"
+    },
+    {
+      "symbol": "XAU_USD",
+      "file": "strategy-variants-XAU_USD.json",
+      "sha256": "c5872f5d5961265286d142403fc7a22b1da47856079cd29c73210670385e0e92",
+      "source_file_sha256": "8727c27dd1e6159c97d48d47400872a1050c57872b9ca450360400c97bb52797"
+    }
+  ]
+}
