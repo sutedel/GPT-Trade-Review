@@ -1,0 +1,253 @@
+{
+  "config": {
+    "version": "proposal-lab-v1",
+    "author": "assistant_proposal_not_vahid_approved",
+    "status": "research_hypotheses_not_validated",
+    "timeframe_policy": "single_timeframe_per_dataset_not_FTC1",
+    "atr": {
+      "period": 21,
+      "method": "simple_true_range",
+      "first_tr": "high_low"
+    },
+    "ema": {
+      "fast": 20,
+      "slow": 100,
+      "slope_bars": 5,
+      "warmup": 200
+    },
+    "execution": {
+      "entry": "next_contiguous_bar_open",
+      "target_r": 2,
+      "max_hold_bars": 48,
+      "one_position_per_dataset_strategy": true,
+      "same_bar_tie": "stop_first",
+      "gap_stop": "worse_open",
+      "gap_target": "target_no_positive_slippage",
+      "incomplete_last_trade": "leave_open",
+      "risk_unit": "initial_reference_price_stop_distance",
+      "cost_model": "reference_ohlc_plus_assumed_round_trip_cost_not_bid_ask_execution"
+    },
+    "splits": {
+      "exploration_before": "2025-01-01T00:00:00+00:00",
+      "evaluation_before": "2026-01-01T00:00:00+00:00",
+      "holdout_from": "2026-01-01T00:00:00+00:00",
+      "holdout_policy": "legacy_2026_not_backtested_or_exported_in_v1",
+      "short_native_data": "separate_smoke_test_not_holdout"
+    },
+    "costs": {
+      "EUR_USD": {
+        "pip": 0.0001,
+        "spread_pips": 1.2,
+        "slippage_each_side_pips": 0.1,
+        "commission_round_trip_pips": 0.2,
+        "overnight_per_24h_pips": 0.5
+      },
+      "GBP_USD": {
+        "pip": 0.0001,
+        "spread_pips": 1.8,
+        "slippage_each_side_pips": 0.1,
+        "commission_round_trip_pips": 0.2,
+        "overnight_per_24h_pips": 0.5
+      },
+      "AUD_USD": {
+        "pip": 0.0001,
+        "spread_pips": 1.5,
+        "slippage_each_side_pips": 0.1,
+        "commission_round_trip_pips": 0.2,
+        "overnight_per_24h_pips": 0.5
+      },
+      "USD_JPY": {
+        "pip": 0.01,
+        "spread_pips": 1.5,
+        "slippage_each_side_pips": 0.1,
+        "commission_round_trip_pips": 0.2,
+        "overnight_per_24h_pips": 0.5
+      },
+      "XAU_USD": {
+        "pip": 0.01,
+        "spread_pips": 40,
+        "slippage_each_side_pips": 5,
+        "commission_round_trip_pips": 5,
+        "overnight_per_24h_pips": 20
+      }
+    },
+    "cost_disclosure": "All costs are predeclared research assumptions, not broker historical measurements. Overnight cost is elapsed-time proxy, not broker swap/triple-swap schedule. Stress doubles every cost. No account-equity, leverage or margin simulation.",
+    "strategies": [
+      {
+        "id": "P01",
+        "name_fa": "شکست محدوده در جهت روند",
+        "entry_fa": "کلوز بالای سقف ۲۰ کندل قبلی و بالای EMA100 صعودی: خرید؛ حالت قرینه: فروش. کندل سیگنال در محدودهٔ ۲۰تایی حساب نمی‌شود.",
+        "stop_fa": "فاصلهٔ ۱٫۵ ATR21 از قیمت بازشدن کندل ورود؛ هدف ۲ برابر همین فاصله.",
+        "lookback": 20,
+        "stop_atr": 1.5
+      },
+      {
+        "id": "P02",
+        "name_fa": "پولبک به میانگین در روند",
+        "entry_fa": "در روند صعودی EMA100، کلوز قبلی بالای EMA20 قبلی باشد؛ کندل جاری EMA20 قبلی را لمس کند، صعودی بسته شود و دوباره بالای EMA20 و EMA100 بسته شود: خرید؛ حالت قرینه: فروش.",
+        "stop_fa": "فاصلهٔ ۱٫۵ ATR21 از قیمت بازشدن کندل ورود؛ هدف ۲ برابر همین فاصله.",
+        "stop_atr": 1.5
+      },
+      {
+        "id": "P03",
+        "name_fa": "شکست بیس با مرز ثابت",
+        "entry_fa": "۳ تا ۱۲ کندل با کلوز داخل سقف و کف کندل اول؛ اولین کلوز بیرون از مرز، هم‌جهت EMA100 و شیب آن. عرض بیس بین ۰٫۳ تا ۱٫۵ ATR21 در لحظهٔ شکست. شدو مرز را تغییر نمی‌دهد.",
+        "stop_fa": "پشت مرز مخالف بیس با فاصلهٔ ۰٫۱ ATR؛ ورود تنها اگر ریسک بین ۰٫۵ و ۳ ATR باشد. هدف ۲ برابر ریسک.",
+        "minimum_base": 3,
+        "maximum_base": 12,
+        "base_min_atr": 0.3,
+        "base_max_atr": 1.5,
+        "stop_buffer_atr": 0.1,
+        "risk_min_atr": 0.5,
+        "risk_max_atr": 3
+      }
+    ]
+  },
+  "registry_sha256": "710165d5b2893669b605dfcd064af0cea50390b3479a229ef89377165ec22e1c",
+  "datasets": [
+    {
+      "symbol": "EUR_USD",
+      "timeframe": "M15",
+      "file": "strategy-lab-EUR_USD.json",
+      "sha256": "e87913c1902c649e2629dbbafebfe344d64dde255e4845421b5946062d91b10d",
+      "bars": 38236,
+      "first": 1718719200,
+      "last": 1767218400,
+      "periods": [
+        {
+          "id": "exploration",
+          "name": "بررسی اولیه · ۲۰۲۴",
+          "start": 1718719200,
+          "end": 1735689600
+        },
+        {
+          "id": "evaluation",
+          "name": "ارزیابی زمانی · ۲۰۲۵",
+          "start": 1735689600,
+          "end": 1767225600
+        }
+      ],
+      "provenance": {
+        "kind": "legacy_UTC_reference_OHLC_quote_side_unverified",
+        "sha256": "a29ef1f3e21cd8151f76e0c1d422efa38d18529f6b0f054d1bf53f3a409a75a9",
+        "timezone": "UTC_explicit",
+        "price_side": "unverified_reference",
+        "excluded_holdout_bars": 11156
+      }
+    },
+    {
+      "symbol": "GBP_USD",
+      "timeframe": "M15",
+      "file": "strategy-lab-GBP_USD.json",
+      "sha256": "44f4b4656db42e6880e3cd73b8b653487cfdc692671ff40a873e292add538b88",
+      "bars": 38233,
+      "first": 1718719200,
+      "last": 1767218400,
+      "periods": [
+        {
+          "id": "exploration",
+          "name": "بررسی اولیه · ۲۰۲۴",
+          "start": 1718719200,
+          "end": 1735689600
+        },
+        {
+          "id": "evaluation",
+          "name": "ارزیابی زمانی · ۲۰۲۵",
+          "start": 1735689600,
+          "end": 1767225600
+        }
+      ],
+      "provenance": {
+        "kind": "legacy_UTC_reference_OHLC_quote_side_unverified",
+        "sha256": "f347c8d35bd47f8bd1ed42ac5a02a70becea5a701b3c8c84efadd6e3eda3df24",
+        "timezone": "UTC_explicit",
+        "price_side": "unverified_reference",
+        "excluded_holdout_bars": 11156
+      }
+    },
+    {
+      "symbol": "AUD_USD",
+      "timeframe": "M15",
+      "file": "strategy-lab-AUD_USD.json",
+      "sha256": "644623db3209f3c0e693de34fc0771f1ed7f9318303469b9fb4a657333678caf",
+      "bars": 38236,
+      "first": 1718719200,
+      "last": 1767218400,
+      "periods": [
+        {
+          "id": "exploration",
+          "name": "بررسی اولیه · ۲۰۲۴",
+          "start": 1718719200,
+          "end": 1735689600
+        },
+        {
+          "id": "evaluation",
+          "name": "ارزیابی زمانی · ۲۰۲۵",
+          "start": 1735689600,
+          "end": 1767225600
+        }
+      ],
+      "provenance": {
+        "kind": "legacy_UTC_reference_OHLC_quote_side_unverified",
+        "sha256": "33ac5a9df8158445b92467c3338e6689b3b7f12c3d8d09f560a66c0e14e737ea",
+        "timezone": "UTC_explicit",
+        "price_side": "unverified_reference",
+        "excluded_holdout_bars": 11156
+      }
+    },
+    {
+      "symbol": "USD_JPY",
+      "timeframe": "M15",
+      "file": "strategy-lab-USD_JPY.json",
+      "sha256": "20245a2cb767bf5532a6e1cbb559d62bf735cfb202671bb4f50a48e926b68675",
+      "bars": 38236,
+      "first": 1718719200,
+      "last": 1767218400,
+      "periods": [
+        {
+          "id": "exploration",
+          "name": "بررسی اولیه · ۲۰۲۴",
+          "start": 1718719200,
+          "end": 1735689600
+        },
+        {
+          "id": "evaluation",
+          "name": "ارزیابی زمانی · ۲۰۲۵",
+          "start": 1735689600,
+          "end": 1767225600
+        }
+      ],
+      "provenance": {
+        "kind": "legacy_UTC_reference_OHLC_quote_side_unverified",
+        "sha256": "0e5600607a3adee3f0fbf1e91e3b1f136405dcbb45577dcb1bb88f716643f8bd",
+        "timezone": "UTC_explicit",
+        "price_side": "unverified_reference",
+        "excluded_holdout_bars": 11156
+      }
+    },
+    {
+      "symbol": "XAU_USD",
+      "timeframe": "M5",
+      "file": "strategy-lab-XAU_USD.json",
+      "sha256": "8727c27dd1e6159c97d48d47400872a1050c57872b9ca450360400c97bb52797",
+      "bars": 4298,
+      "first": 1791852600,
+      "last": 1793718000,
+      "periods": [
+        {
+          "id": "smoke",
+          "name": "آزمون کوتاه طلا · اعتبارسنجی سود نیست",
+          "start": 1791852600,
+          "end": 1793718000
+        }
+      ],
+      "provenance": {
+        "kind": "cached_OANDA_mid",
+        "sha256": "6494c98c422238ea7d0f68ef594268cecd10c5b9902d73fb763cc2a4912e3789",
+        "timezone": "UTC_explicit",
+        "price_side": "mid",
+        "excluded_holdout_bars": 0
+      }
+    }
+  ]
+}
