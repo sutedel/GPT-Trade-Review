@@ -1,0 +1,87 @@
+{
+  "config": {
+    "version": "entry-refinements-v1",
+    "baseline": "P09_touch-entry-v1",
+    "design": "three_fixed_hypotheses_not_parameter_grid; shared_original_ex_ante_cohort_pool; no_reserved_FX_2026",
+    "selection_disclosure": "chosen_after_descriptive_review_of_existing_2024_and_2025_results; 2025_is_not_pristine_holdout",
+    "structural_stop_buffer_atr": 0.1,
+    "structural_risk_min_atr": 0.5,
+    "structural_risk_max_atr": 3.0,
+    "strategies": [
+      {
+        "id": "P11",
+        "name_fa": "ورود روی خط · اعتبار فقط ۸ کندل",
+        "entry_fa": "همان فرصت‌ها و سفارش محدود P09؛ فقط اعتبار انتظار از ۳۲ به ۸ کندل پس از شکست کم می‌شود. اگر تا آن زمان خط لمس نشود، معامله‌ای نداریم.",
+        "stop_fa": "همان SL ثابت ۱٫۵ ATR21 و هدف ۲R؛ خروج زمانی ۴۸ کندل.",
+        "stop_atr": 1.5,
+        "wait_bars": 8,
+        "target_r": 2
+      },
+      {
+        "id": "P12",
+        "name_fa": "ورود روی خط · هدف نزدیک‌تر ۱R",
+        "entry_fa": "همان فرصت‌ها، سفارش محدود روی خط و اعتبار ۳۲ کندلی P09؛ هدف نزدیک‌تر می‌شود و ورود تغییر نمی‌کند. باز و بسته‌شدن زودتر ممکن است امکان اجرای فرصت بعدی را تغییر دهد.",
+        "stop_fa": "SL همان ۱٫۵ ATR21 ثابت شکست؛ TP فقط ۱R و خروج زمانی ۴۸ کندل.",
+        "stop_atr": 1.5,
+        "wait_bars": 32,
+        "target_r": 1
+      },
+      {
+        "id": "P13",
+        "name_fa": "ورود روی خط · حد ضرر ساختاری",
+        "entry_fa": "همان فرصت‌های P09؛ پیش از فعال‌سازی، حد ضرر پشت نزدیک‌ترین مرز ابطال پیوت یا ابتدای لگ محاسبه می‌شود. فقط ریسک بین ۰٫۵ تا ۳ ATR21 پذیرفته می‌شود؛ فیلتر ریسک و تغییر SL هر دو جزو این فرضیه‌اند.",
+        "stop_fa": "برای خرید: ۰٫۱ ATR21 زیر بالاترینِ قیمت پیوت و ابتدای لگ؛ فروش قرینه. هدف ۲R از ورود روی خط، اعتبار ۳۲ کندل و خروج زمانی ۴۸ کندل.",
+        "wait_bars": 32,
+        "target_r": 2
+      }
+    ]
+  },
+  "config_sha256": "a351f50f1993e6719f2bc3d35f897d0e15544508d9beab410e016c8c3127dc83",
+  "source_manifest_sha256": "bb2bb406abfe73221a7491e51be572aaa41a94643e7e0cdd40c05dcc713918ce",
+  "source_registry_sha256": "710165d5b2893669b605dfcd064af0cea50390b3479a229ef89377165ec22e1c",
+  "code_sha256": {
+    "src/forex_research/strategies/pivot_leg_setup.py": "8934ff8d8a9867d4807ff8491081a0294eeba3999ee28e5865788e6afcc27c5f",
+    "src/forex_research/strategies/variants.py": "4a144f651833baa5ea28603055d6abd51f3d4bd4319e3ef24329c7c6d239d5f4",
+    "src/forex_research/strategies/lab.py": "f06f0adf43de7b3b7e3c1b89f8a6083ecc0d146be352eee4ffda9c17e6e561ec",
+    "src/forex_research/detectors.py": "0071e149f56fd7fec57daf459efa17a51a8596a03e459bf9411c92fb0e5b7f28",
+    "src/forex_research/concepts/pivot.py": "b226d8045d05613544dd47749d761e07af3a42cbaf46952a78b33670953a93bb",
+    "src/forex_research/forming.py": "0dfee7f6e87ca7acdb819a485a5d2d00e201c8c3ecabd9822c9633afa255ab4a",
+    "src/forex_research/indicators.py": "12ef8c36ca242c4876f0b007575e5b60cce4530becd0c8e3810885ca4668e2d0",
+    "src/forex_research/aggregation.py": "45cb19f85ca298fa1106076f3ac61b33ae8432c9f06805f3a0087222f204a7e9",
+    "src/forex_research/concepts/leg.py": "504a9f3719cbd749f1c97da8ea209a35ccd32a5a673302b3e1c8af74ce2b01ad",
+    "src/forex_research/strategies/touch_entry.py": "ab72e149a2d8ecd1908f64ad1e618f334c692787bbdc4763877a37239cd9b82a",
+    "src/forex_research/strategies/entry_refinements.py": "7656706dd96e951dc69c22eda2fb7b456e1a145e2eaf29d0dba6d501f52c4acb"
+  },
+  "datasets": [
+    {
+      "symbol": "EUR_USD",
+      "file": "entry-refinements-EUR_USD.json",
+      "sha256": "c255acee8092a29f801d4941b195bc798a709bfa40e551aa4bc36b7a490b830b",
+      "source_file_sha256": "e87913c1902c649e2629dbbafebfe344d64dde255e4845421b5946062d91b10d"
+    },
+    {
+      "symbol": "GBP_USD",
+      "file": "entry-refinements-GBP_USD.json",
+      "sha256": "4fe2e97230bf2c4304fd9d5128a240932c9cb0e41c0c9c7fb0ce4a15dff84325",
+      "source_file_sha256": "44f4b4656db42e6880e3cd73b8b653487cfdc692671ff40a873e292add538b88"
+    },
+    {
+      "symbol": "AUD_USD",
+      "file": "entry-refinements-AUD_USD.json",
+      "sha256": "c94aac3a6a42a2cd24fd33c036b4b77571042ed626982aeb817165a11dd3f7e3",
+      "source_file_sha256": "644623db3209f3c0e693de34fc0771f1ed7f9318303469b9fb4a657333678caf"
+    },
+    {
+      "symbol": "USD_JPY",
+      "file": "entry-refinements-USD_JPY.json",
+      "sha256": "d5910701418a232d7bf5f255f9411f26ace4b64d2e42dc46d450438c6434a177",
+      "source_file_sha256": "20245a2cb767bf5532a6e1cbb559d62bf735cfb202671bb4f50a48e926b68675"
+    },
+    {
+      "symbol": "XAU_USD",
+      "file": "entry-refinements-XAU_USD.json",
+      "sha256": "11e8e7d37550211e5bc1ab365f0bca65ba982659bccd4a92aaa2ca5947e23e2f",
+      "source_file_sha256": "8727c27dd1e6159c97d48d47400872a1050c57872b9ca450360400c97bb52797"
+    }
+  ]
+}
