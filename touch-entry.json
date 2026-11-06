@@ -1,0 +1,84 @@
+{
+  "config": {
+    "version": "touch-entry-v1",
+    "source_setup": "pivot-leg-setup-v1",
+    "candidate_policy": "first_eligible_P01_breakout_then_block_next_32_bars_independent_of_future_outcome; one_cohort_per_pivot",
+    "wait_bars": 32,
+    "impulse_close_atr": 0.5,
+    "touch_zone_atr": 0.1,
+    "confirmation_close_atr": 0.25,
+    "cancel_close_atr": -0.5,
+    "stop_atr": 1.5,
+    "target_r": 2,
+    "max_hold_bars": 48,
+    "limit_fill": "exact_frozen_breakout_line_active_only_next_bar_after_impulse_close; no_favorable_gap_improvement",
+    "intrabar_policy": "fill_before_later_invalidation; stop_first; intrabar_fill_TP_only_if_close_beyond_TP_otherwise_defer_ambiguous_TP; open_fill_all_levels_available",
+    "time_policy": "intrabar_fill_observed_at_bar_close; costs_from_fill_bar_start_conservative; no_tick_time_claim",
+    "gap_policy": "missing_time_cancels_unfilled_order; contiguous_price_gap_can_fill_and_stop_at_worse_open",
+    "holdout": "same_frozen_2024_2025_FX_and_short_gold; reserved_FX_2026_untouched",
+    "strategies": [
+      {
+        "id": "P09",
+        "name_fa": "پیوت و لگ · ورود روی خود خط",
+        "stop_atr": 1.5,
+        "entry_fa": "پیوت و لگ واجد شرط P08 در لحظهٔ شکست؛ پس از کلوز حداقل ۰٫۵ ATR21 دور از خط، سفارش محدود روی خود خط فعال می‌شود. لمس در کندل بعد یا دیرتر ورود می‌دهد؛ تأیید کلوز لازم نیست. اعتبار تا ۳۲ کندل پس از شکست.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR21 ثابت شکست از خط ورود؛ هدف ۲R و خروج زمانی ۴۸ کندل. برخورد حد ضرر در کندل لمس حساب می‌شود."
+      },
+      {
+        "id": "P10",
+        "name_fa": "همان فرصت‌های P09 · ورود با تأیید",
+        "stop_atr": 1.5,
+        "entry_fa": "همان فرصت‌های ازپیش‌مشخص‌شدهٔ P09؛ پس از دورشدن ۰٫۵ ATR21، لمس ناحیهٔ ±۰٫۱ ATR21 و کندل هم‌جهت با کلوز ۰٫۲۵ ATR21 بیرون خط، ورود در بازشدن کندل بعد. این کنترل همسان با P09 است؛ فهرست فرصت‌های آن الزاماً P08 نیست.",
+        "stop_fa": "حد ضرر ۱٫۵ ATR21 ثابت شکست از ورود، هدف ۲R و خروج زمانی ۴۸ کندل؛ همان هزینه‌های P09."
+      }
+    ]
+  },
+  "config_sha256": "8e994b2a1d418194d44fe50c6ea4f1ed884995e27e892e79ece6dedb9404a567",
+  "source_config_sha256": "08d500d54a5cb96dcc1507cf03f02b2cb8bcac74064944a8ce35bcdd80971d4b",
+  "source_sha256": "96d69f6d4b9fb96f23eff3af3b5d278e5f685ad232bfea773c94c289afaef181",
+  "code_sha256": {
+    "src/forex_research/strategies/pivot_leg_setup.py": "8934ff8d8a9867d4807ff8491081a0294eeba3999ee28e5865788e6afcc27c5f",
+    "src/forex_research/strategies/variants.py": "4a144f651833baa5ea28603055d6abd51f3d4bd4319e3ef24329c7c6d239d5f4",
+    "src/forex_research/strategies/lab.py": "f06f0adf43de7b3b7e3c1b89f8a6083ecc0d146be352eee4ffda9c17e6e561ec",
+    "src/forex_research/detectors.py": "0071e149f56fd7fec57daf459efa17a51a8596a03e459bf9411c92fb0e5b7f28",
+    "src/forex_research/concepts/pivot.py": "b226d8045d05613544dd47749d761e07af3a42cbaf46952a78b33670953a93bb",
+    "src/forex_research/forming.py": "0dfee7f6e87ca7acdb819a485a5d2d00e201c8c3ecabd9822c9633afa255ab4a",
+    "src/forex_research/indicators.py": "12ef8c36ca242c4876f0b007575e5b60cce4530becd0c8e3810885ca4668e2d0",
+    "src/forex_research/aggregation.py": "45cb19f85ca298fa1106076f3ac61b33ae8432c9f06805f3a0087222f204a7e9",
+    "src/forex_research/concepts/leg.py": "504a9f3719cbd749f1c97da8ea209a35ccd32a5a673302b3e1c8af74ce2b01ad",
+    "src/forex_research/strategies/touch_entry.py": "ab72e149a2d8ecd1908f64ad1e618f334c692787bbdc4763877a37239cd9b82a"
+  },
+  "source_registry_sha256": "710165d5b2893669b605dfcd064af0cea50390b3479a229ef89377165ec22e1c",
+  "datasets": [
+    {
+      "symbol": "EUR_USD",
+      "file": "touch-entry-EUR_USD.json",
+      "sha256": "9b2e66a0d6c1622c9fd340a98513ab74f34b79bf9bb7c7757254ef2e6b99f2b0",
+      "source_file_sha256": "e87913c1902c649e2629dbbafebfe344d64dde255e4845421b5946062d91b10d"
+    },
+    {
+      "symbol": "GBP_USD",
+      "file": "touch-entry-GBP_USD.json",
+      "sha256": "5cd9adf440064347e42f7fb811d5e921d3229be658d065b014cc7856cb87b8a6",
+      "source_file_sha256": "44f4b4656db42e6880e3cd73b8b653487cfdc692671ff40a873e292add538b88"
+    },
+    {
+      "symbol": "AUD_USD",
+      "file": "touch-entry-AUD_USD.json",
+      "sha256": "3fba1337291da5c1561183425894659b59e43b1243c2431b03e6795093d0998a",
+      "source_file_sha256": "644623db3209f3c0e693de34fc0771f1ed7f9318303469b9fb4a657333678caf"
+    },
+    {
+      "symbol": "USD_JPY",
+      "file": "touch-entry-USD_JPY.json",
+      "sha256": "f63f18237d8a6a9b43f3846f58f55a988550eaeb161a325c3a1995a54eec19db",
+      "source_file_sha256": "20245a2cb767bf5532a6e1cbb559d62bf735cfb202671bb4f50a48e926b68675"
+    },
+    {
+      "symbol": "XAU_USD",
+      "file": "touch-entry-XAU_USD.json",
+      "sha256": "736695c91e84046a87c42c069d2d4b88ec8b2fd2d131a99a260af57e90be34bf",
+      "source_file_sha256": "8727c27dd1e6159c97d48d47400872a1050c57872b9ca450360400c97bb52797"
+    }
+  ]
+}
