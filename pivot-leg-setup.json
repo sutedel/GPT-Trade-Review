@@ -1,0 +1,85 @@
+{
+  "config": {
+    "version": "pivot-leg-setup-v1",
+    "strategy_id": "P08",
+    "source_file": "Recources/pivot 3.txt",
+    "source_ranges": {
+      "pivot_atr": "3122-3132",
+      "pivot_flags": "3481-3611",
+      "forming_start": "4397-4468",
+      "leg_snap": "4470-4504"
+    },
+    "profile": "independent_continuous_closed_bar_source_kernels_not_MT4_tick_or_rolling120_parity",
+    "pivot_age_bars": 32,
+    "leg_minimum_trex_atr": 2.4,
+    "atr_method": "sma",
+    "first_tr": "exclude",
+    "digits": {
+      "EUR_USD": 5,
+      "GBP_USD": 5,
+      "AUD_USD": 5,
+      "USD_JPY": 3,
+      "XAU_USD": 3
+    },
+    "leg_snap_policy": "causal_forming_parent_snap_each_closed_trigger_proposed_automation_of_source_action",
+    "pivot_policy": "most_recent_unambiguous_confirmation_before_or_at_breakout_same_direction_age_le_32_one_entry_signal_per_pivot",
+    "invalidation": "any_strict_wick_break_of_frozen_pivot_or_leg_start_between_breakout_and_confirmation_rejects",
+    "baseline": "frozen_P04_signals_with_P01_breakout_and_ATR21_execution",
+    "holdout": "legacy_FX_2026_untouched; 2025_already_seen_temporal_comparison; gold_short_smoke",
+    "strategies": [
+      {
+        "id": "P08",
+        "name_fa": "پیوت وحید + لگ تازه + بازآزمایی شکست",
+        "stop_atr": 1.5,
+        "entry_fa": "تأیید برگشت P04؛ در لحظهٔ شکست، آخرین پیوتِ قابل اطلاع هم‌جهت و حداکثر ۳۲ کندل قدیمی باشد. لگِ متصل به ساختار جاری هم‌جهت و حداقل ۲٫۴ ATR ترکیبی باشد. شکستن شدوییِ پیوت یا ابتدای لگ تا تأیید، ستاپ را رد می‌کند. فقط یک سیگنال ورود برای هر پیوت.",
+        "stop_fa": "همان ریسک مقایسهٔ P04: حد ضرر ۱٫۵ ATR21 ثابتِ شکست از ورود، هدف ۲R و خروج زمانی ۴۸ کندل. ATR ترکیبی فقط در پیوت و فیلتر لگ مصرف می‌شود."
+      }
+    ]
+  },
+  "config_sha256": "08d500d54a5cb96dcc1507cf03f02b2cb8bcac74064944a8ce35bcdd80971d4b",
+  "code_sha256": {
+    "src/forex_research/strategies/pivot_leg_setup.py": "8934ff8d8a9867d4807ff8491081a0294eeba3999ee28e5865788e6afcc27c5f",
+    "src/forex_research/strategies/variants.py": "4a144f651833baa5ea28603055d6abd51f3d4bd4319e3ef24329c7c6d239d5f4",
+    "src/forex_research/strategies/lab.py": "f06f0adf43de7b3b7e3c1b89f8a6083ecc0d146be352eee4ffda9c17e6e561ec",
+    "src/forex_research/detectors.py": "0071e149f56fd7fec57daf459efa17a51a8596a03e459bf9411c92fb0e5b7f28",
+    "src/forex_research/concepts/pivot.py": "b226d8045d05613544dd47749d761e07af3a42cbaf46952a78b33670953a93bb",
+    "src/forex_research/forming.py": "0dfee7f6e87ca7acdb819a485a5d2d00e201c8c3ecabd9822c9633afa255ab4a",
+    "src/forex_research/indicators.py": "12ef8c36ca242c4876f0b007575e5b60cce4530becd0c8e3810885ca4668e2d0",
+    "src/forex_research/aggregation.py": "45cb19f85ca298fa1106076f3ac61b33ae8432c9f06805f3a0087222f204a7e9",
+    "src/forex_research/concepts/leg.py": "504a9f3719cbd749f1c97da8ea209a35ccd32a5a673302b3e1c8af74ce2b01ad"
+  },
+  "source_sha256": "96d69f6d4b9fb96f23eff3af3b5d278e5f685ad232bfea773c94c289afaef181",
+  "source_registry_sha256": "710165d5b2893669b605dfcd064af0cea50390b3479a229ef89377165ec22e1c",
+  "datasets": [
+    {
+      "symbol": "EUR_USD",
+      "file": "pivot-leg-setup-EUR_USD.json",
+      "sha256": "359913fe933bb67b4145ec0e339335bc799b949e0add3f94fbc31d508c39811d",
+      "source_file_sha256": "e87913c1902c649e2629dbbafebfe344d64dde255e4845421b5946062d91b10d"
+    },
+    {
+      "symbol": "GBP_USD",
+      "file": "pivot-leg-setup-GBP_USD.json",
+      "sha256": "6669ae5fb96594b2cc4bb1cd62339b69ed567e34ab8c5dbe961f190d0b26200e",
+      "source_file_sha256": "44f4b4656db42e6880e3cd73b8b653487cfdc692671ff40a873e292add538b88"
+    },
+    {
+      "symbol": "AUD_USD",
+      "file": "pivot-leg-setup-AUD_USD.json",
+      "sha256": "a29594c8ed750b9b95434ad418154c4172fe26300a497ef7be32709017a712bb",
+      "source_file_sha256": "644623db3209f3c0e693de34fc0771f1ed7f9318303469b9fb4a657333678caf"
+    },
+    {
+      "symbol": "USD_JPY",
+      "file": "pivot-leg-setup-USD_JPY.json",
+      "sha256": "3b5309d82d70b249a3a12f6174c4a8a1fd862ded49f95301c998d4904a3acb67",
+      "source_file_sha256": "20245a2cb767bf5532a6e1cbb559d62bf735cfb202671bb4f50a48e926b68675"
+    },
+    {
+      "symbol": "XAU_USD",
+      "file": "pivot-leg-setup-XAU_USD.json",
+      "sha256": "c9c51680cfe3dece19fdbd4fc99460ec7a7b9acb1cf8d2d4e6f1295172567128",
+      "source_file_sha256": "8727c27dd1e6159c97d48d47400872a1050c57872b9ca450360400c97bb52797"
+    }
+  ]
+}
